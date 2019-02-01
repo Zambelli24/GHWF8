@@ -17,6 +17,16 @@ def test_two_grades():
     assert compute_hw_average(grades, 0) == 50.5
 
 
+def test_one_grade_one_dropped():
+    grades = [100]
+    assert compute_hw_average(grades, 1) == 0
+
+
+def test_one_grade_two_dropped():
+    grades = [100]
+    assert compute_hw_average(grades, 2) == 0
+
+
 def test_drop_grades():
     grades = [100, 90, 80, 50]
     assert compute_hw_average(grades, 1) == 90
